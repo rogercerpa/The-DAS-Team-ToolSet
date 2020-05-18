@@ -1,0 +1,29 @@
+{
+	"name": "The-DAS-Team-ToolSet",
+	"version": "1.0.0",
+	"description": "Design and Application Tool-Set for productivity, Efficiency and Quality",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "electron .",
+		"build": "electron-builder"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/rogercerpa/The-DAS-Team-ToolSet.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/rogercerpa/The-DAS-Team-ToolSet/issues"
+	},
+	"homepage": "https://github.com/rogercerpa/The-DAS-Team-ToolSet#readme",
+	"devDependencies": {
+		"electron": "^8.3.0",
+		"electron-builder": "^22.6.0"
+	},
+	"dependencies": {
+		"electron-reload": "^1.5.0"
+	}
+}
