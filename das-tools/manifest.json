@@ -12,12 +12,7 @@
 	},
 	"browser_action": {
 		"default_title": "DAS Tools",
-		"default_popup": "popups/popup.html"
-	},
-	"content_scripts": [
-		{
-			"js": [ "assets/js/triage.js", "assets/js/startUp.js" ],
-			"matches": [ "*://*/*" ]
-		}
-	]
+		"default_popup": "public/index.html"
+	}
+	
 }
