@@ -1,0 +1,23 @@
+{
+	"name": "DAS-Tools",
+	"version": "1.0",
+	"author": "Roger Cerpa",
+	"manifest_version": 2,
+	"description": "Edge DAS tools extension - Triage and BOM tools.",
+	"icons": {
+		"16": "assets/icons/das16x16.png",
+		"32": "assets/icons/das32x32.png",
+		"48": "assets/icons/das48x48.png",
+		"128": "assets/icons/das128x128.png"
+	},
+	"browser_action": {
+		"default_title": "DAS Tools",
+		"default_popup": "popups/popup.html"
+	},
+	"content_scripts": [
+		{
+			"js": [ "assets/js/triage.js", "assets/js/startUp.js" ],
+			"matches": [ "*://*/*" ]
+		}
+	]
+}
