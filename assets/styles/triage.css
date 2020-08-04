@@ -1,9 +1,10 @@
 body {
+	color: aliceblue;
 	height: 600px;
 	width: 600px;
 	background-color: #2c2c2c;
 }
 .wrapper {
-	margin: 100px auto 0 auto;
+	margin: 50px 50px 50px 50px;
 	max-width: 600px;
 }
