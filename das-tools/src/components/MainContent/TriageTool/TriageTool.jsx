@@ -15,8 +15,6 @@ import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // display: 'flex',
-    // flexWrap: 'wrap',
     margin: theme.spacing(2)
   },
   textField: {

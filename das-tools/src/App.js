@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from "./components/Header/index"
 import Footer from "./components/Footer/index"
-import TriageForm from "./components/MainContent/TriageTool/index"
-import { makeStyles } from '@material-ui/core/styles';
+import TriageForm from "./components/MainContent/TriageTool/TriageTool"
 import Grid from '@material-ui/core/Grid';
 
 
