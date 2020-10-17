@@ -1,11 +1,16 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import RFATYPE from "./RFA-Data/rfaType";
 import RFATIME from "./RFA-Data/rfaTime"
 import RFAINFO from "./RFA-Data/rfaInfo"
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -19,6 +24,13 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
     width: '25ch',
   },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
 }));
 
 export default function TriageForm() {
@@ -30,9 +42,14 @@ export default function TriageForm() {
     checkedF: true,
     checkedG: true,
   });
+ 
+  const [age, setAge] = React.useState('');
+
+ 
 
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
+    setAge(event.target.value);
   };
 
 
@@ -49,60 +66,46 @@ export default function TriageForm() {
     <RFAINFO/>
     </div>
 
+{/* RFA ECD AND BRD */}
+
+<div>
+        <RFATIME/>
+      </div>
+
+
 {/* RFA TYPE INFO */}
       <div>
         <RFATYPE/>
       </div>
 
-{/* RFA ECD AND BRD */}
-
-      <div>
-        <RFATIME/>
-      </div>
 
 {/* FOLDER CREATION SAVING LOCATION */}
 
       <div>
-        <TextField
-          id="outlined-full-width"
-          label="Label"
-          style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Full width!"
-          fullWidth
-          margin="normal"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="outlined"
-        />
-        <TextField
-          label="None"
-          id="outlined-margin-none"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          variant="outlined"
-        />
-        <TextField
-          label="Dense"
-          id="outlined-margin-dense"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="dense"
-          variant="outlined"
-        />
-        <TextField
-          label="Normal"
-          id="outlined-margin-normal"
-          defaultValue="Default Value"
-          className={classes.textField}
-          helperText="Some important text"
-          margin="normal"
-          variant="outlined"
-        />
+      <FormControl className={classes.formControl}>
+        <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+          Save Location
+        </InputLabel>
+        <Select
+          labelId="demo-simple-select-placeholder-label-label"
+          id="demo-simple-select-placeholder-label"
+          value={age}
+          onChange={handleChange}
+          displayEmpty
+          className={classes.selectEmpty}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={"LOCAL"}>LOCAL</MenuItem>
+          <MenuItem value={"SERVER"}>SERVER</MenuItem>
+
+        </Select>
+        <FormHelperText>Select Location where to save the Project Folder</FormHelperText>
+      </FormControl>
+  
       </div>
+
       <div className={classes.root}>
         <Button variant="contained" color="primary" size="large" className={classes.root}>Create</Button>
         <Button variant="contained" color="secondary" size="large" className={classes.root}>Reset</Button>
