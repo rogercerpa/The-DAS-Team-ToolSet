@@ -16,8 +16,13 @@ const useStyles = makeStyles((theme) => ({
   },
   textField: {
     marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: '25ch',
+    marginRight: theme.spacing(8),
+    width: '40ch',
+  },
+  root2: {
+    padding: '0 40px ',
+    display: 'flex',
+    margin: theme.spacing(2)
   },
 }));
 
@@ -39,6 +44,20 @@ export default function TriageForm() {
   return (
     <div className={classes.root}>
       <Container>
+{/* RFA NEW PROJECT OR REVISION */}
+
+              <div className={classes.root2}>
+      <FormGroup row>
+      <FormControlLabel
+        control={<Checkbox checked={state.checkedA} onChange={handleChange} name="checkedA" />}
+        label="New Project"
+      />
+      <FormControlLabel
+        control={<Checkbox checked={state.checkedB} onChange={handleChange} name="checkedB" />}
+        label="Revision"
+      />
+      </FormGroup>
+        </div>
 
 {/* RFA INFORMATION INPUT FIELDS */}
       <div>
@@ -71,21 +90,6 @@ export default function TriageForm() {
           margin="dense"
         />
       </div>
-
-      {/* RFA NEW PROJECT OR REVISION */}
-
-        <div>
-      <FormGroup row>
-      <FormControlLabel
-        control={<Checkbox checked={state.checkedA} onChange={handleChange} name="checkedA" />}
-        label="New Project"
-      />
-      <FormControlLabel
-        control={<Checkbox checked={state.checkedB} onChange={handleChange} name="checkedB" />}
-        label="Revision"
-      />
-      </FormGroup>
-        </div>
 
       </Container>
     </div>
