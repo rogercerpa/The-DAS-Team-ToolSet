@@ -2,9 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
-import RFATYPE from "./RFA-Data/rfaType";
-import RFATIME from "./RFA-Data/rfaTime"
-import RFAINFO from "./RFA-Data/rfaInfo"
+import RFATYPE from "../RFA-Data/rfaType";
+import RFATIME from "../RFA-Data/rfaTime"
+import RFAINFO from "../RFA-Data/rfaInfo"
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';

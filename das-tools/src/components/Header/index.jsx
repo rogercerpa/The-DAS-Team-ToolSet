@@ -27,9 +27,9 @@ export default function MainHeader() {
         textColor="primary"
         centered
       >
-        <Tab label="Triage Folder" />
-        <Tab label="Triage Time" />
-        <Tab label="Triage Notes" />
+        <Tab label="Triage Folder" href="/TriageFolder" />
+        <Tab label="Triage Time" href="/TriageTime" />
+        <Tab label="Triage Notes" href="/TriageNotes" />
       </Tabs>
     </Paper>
   );
