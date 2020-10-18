@@ -43,8 +43,6 @@ export default function TriageForm() {
  
   const [age, setAge] = React.useState('');
 
- 
-
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
     setAge(event.target.value);
@@ -53,7 +51,9 @@ export default function TriageForm() {
 
   return (
     <div className={classes.root}>
+
       <Container>
+
         <div className={classes.root}>
         <Button variant="contained" color="primary" size="large" className={classes.root}>Paste </Button>
         <Button variant="contained" color="secondary" size="large" className={classes.root}>Reset</Button>
@@ -61,29 +61,31 @@ export default function TriageForm() {
 
 {/* RFA GENERAL INFO */}
     <div>
-    <RFAINFO/>
+      <RFAINFO/>
     </div>
 
 {/* RFA ECD AND BRD */}
 
-<div>
-        <RFATIME/>
-      </div>
+    <div>
+      <RFATIME/>
+    </div>
 
 
 {/* RFA TYPE INFO */}
-      <div>
-        <RFATYPE/>
-      </div>
+    <div>
+      <RFATYPE/>
+    </div>
 
 
 {/* FOLDER CREATION SAVING LOCATION */}
 
       <div>
       <FormControl className={classes.formControl}>
+
         <InputLabel shrink id="demo-simple-select-placeholder-label-label">
           Save Location
         </InputLabel>
+
         <Select
           labelId="demo-simple-select-placeholder-label-label"
           id="demo-simple-select-placeholder-label"
@@ -92,23 +94,26 @@ export default function TriageForm() {
           displayEmpty
           className={classes.selectEmpty}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
+          <MenuItem value=""><em>None</em></MenuItem>
           <MenuItem value={"LOCAL"}>LOCAL</MenuItem>
           <MenuItem value={"SERVER"}>SERVER</MenuItem>
 
         </Select>
+
         <FormHelperText>Select Location where to save the Project Folder</FormHelperText>
+
       </FormControl>
   
       </div>
 
+{/* RFA FOLDER CREATION BUTTONS */}
+
       <div className={classes.root}>
         <Button variant="contained" color="primary" size="large" className={classes.root}>Create</Button>
         <Button variant="contained" color="secondary" size="large" className={classes.root}>Reset</Button>
-        </div>
-      </Container>
+      </div>
+
+        </Container>
     </div>
   );
 }

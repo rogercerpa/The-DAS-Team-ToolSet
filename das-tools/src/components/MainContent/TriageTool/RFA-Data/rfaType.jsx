@@ -18,11 +18,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleSelect() {
   const classes = useStyles();
-  const [age, setAge] = React.useState('');
+  const [type, setType] = React.useState('');
+  const [account, setAcount] = React.useState("");
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
+  const handleChangeType = (event) => {
+    setType(event.target.value);
   };
+  const handleChangeAccount = (event)=>{
+    setAcount(event.target.value);
+  }
 
   return (
     <div>
@@ -36,8 +40,8 @@ export default function SimpleSelect() {
         <Select
           labelId="demo-simple-select-placeholder-label-label"
           id="demo-simple-select-placeholder-label"
-          value={age}
-          onChange={handleChange}
+          value={type}
+          onChange={handleChangeType}
           displayEmpty
           className={classes.selectEmpty}
         >
@@ -69,8 +73,8 @@ export default function SimpleSelect() {
         <Select
           labelId="demo-simple-select-placeholder-label-label"
           id="demo-simple-select-placeholder-label"
-          value={age}
-          onChange={handleChange}
+          value={account}
+          onChange={handleChangeAccount}
           displayEmpty
           className={classes.selectEmpty}
         >

@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Grid from '@material-ui/core/Grid';
 
 
 
@@ -14,16 +15,12 @@ const useStyles = makeStyles((theme) => ({
     // flexWrap: 'wrap',
     margin: theme.spacing(2)
   },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(8),
-    width: '40ch',
-  },
-  root2: {
-    padding: '0 40px ',
-    display: 'flex',
-    margin: theme.spacing(2)
-  },
+  // textField: {
+  //   marginLeft: theme.spacing(1),
+  //   marginRight: theme.spacing(8),
+  //   width: '40ch',
+  // },
+
 }));
 
 export default function TriageForm() {
@@ -46,7 +43,8 @@ export default function TriageForm() {
       <Container>
 {/* RFA NEW PROJECT OR REVISION */}
 
-              <div className={classes.root2}>
+             
+      <Grid container direction="row" justify="center" alignItems="center">
       <FormGroup row>
       <FormControlLabel
         control={<Checkbox checked={state.checkedA} onChange={handleChange} name="checkedA" />}
@@ -57,10 +55,11 @@ export default function TriageForm() {
         label="Revision"
       />
       </FormGroup>
-        </div>
+      </Grid>
+        
 
 {/* RFA INFORMATION INPUT FIELDS */}
-      <div>
+      <Grid container direction="row" justify="center" alignItems="center">
         <TextField
           label="Project Name"
           id="margin-none"
@@ -89,7 +88,7 @@ export default function TriageForm() {
           helperText="Enter the RFA number"
           margin="dense"
         />
-      </div>
+      </Grid>
 
       </Container>
     </div>

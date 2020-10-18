@@ -1,24 +1,25 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
   },
-  textField: {
-    marginLeft: theme.spacing(10),
-    marginRight: theme.spacing(10),
-    width: 230,
-  },
+  // textField: {
+  //   marginLeft: theme.spacing(10),
+  //   marginRight: theme.spacing(10),
+  //   width: 230,
+  // },
 }));
 
 export default function DateAndTimePickers() {
   const classes = useStyles();
 
   return (
-    <form className={classes.container} noValidate>
+    <Grid container direction="row" justify="center" alignItems="center">
       <TextField
         id="datetime-local"
         label="BRD"
@@ -39,6 +40,6 @@ export default function DateAndTimePickers() {
           shrink: true,
         }}
       />
-    </form>
+    </Grid>
   );
 }
