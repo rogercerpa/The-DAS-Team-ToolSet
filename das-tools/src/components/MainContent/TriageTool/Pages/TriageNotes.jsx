@@ -1,10 +1,10 @@
 import React from 'react'
+import NotesForm from "../TriageNotes/TriageNotes"
 
 function TriageNotes() {
     return (
         <div>
-            <h1>This pagae will include notes from the triager to the AE working this project :)</h1>
-            <h2>COMING SOON</h2>
+         <NotesForm/>
         </div>
     )
 }
