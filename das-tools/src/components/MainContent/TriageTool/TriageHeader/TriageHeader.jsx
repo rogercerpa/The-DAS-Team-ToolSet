@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
@@ -8,6 +7,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import TriageFolder from "../Pages/TriageFolder";
+import TriageTime from "../Pages/TriageTime";
+import TriageNotes from "../Pages/TriageNotes";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -80,17 +82,17 @@ export default function NavTabs() {
         >
           <LinkTab label="Triage Folder" href="/TriageFolder" {...a11yProps(0)} />
           <LinkTab label="Triage Time" href="/TriageTime" {...a11yProps(1)} />
-          <LinkTab label="Triage Notes" href="/TriageNotes" {...a11yProps(2)} />
+          <LinkTab label="Triage Notes" href="TriageNotes" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Page One
+        <TriageFolder/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Page Two
+        <TriageTime/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Page Three
+        <TriageNotes/>
       </TabPanel>
     </div>
   );
