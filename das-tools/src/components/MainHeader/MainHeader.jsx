@@ -176,6 +176,7 @@ export default function PrimarySearchAppBar() {
           <Typography className={classes.title} variant="h6" noWrap>
             Design & Application Team
           </Typography>
+          
 {/* Search bar - not needed at the moment */}
           {/* <div className={classes.search}>
             <div className={classes.searchIcon}>
