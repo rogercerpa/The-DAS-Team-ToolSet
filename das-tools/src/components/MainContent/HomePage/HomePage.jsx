@@ -1,8 +1,20 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch,
+	Redirect
+} from 'react-router-dom';
+import TriageFolder from "../TriageTool/TriageHeader/TriageHeader"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  media: {
+    height: 140,
+  },
 }));
 
 export default function CenteredGrid() {
@@ -21,13 +36,70 @@ export default function CenteredGrid() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-     
+
+     <Router> 
+      <Grid item xs={6}>
+        
+        <Card className={classes.root}>
+
+        <Route exact path={['/TriageFolder']}>
+          
+      <CardActionArea>
+        
+        <CardMedia
+          className={classes.media}
+          src="../"
+          title="Triage Folder"
+        />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            Triage Folder
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Create project folder, estimate the design time and add triage notes. 
+          </Typography>
+        </CardContent>
+        <TriageFolder/> 
+      </CardActionArea>
+
+      </Route>
+
+      <CardActions>
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
+      </CardActions>
+    </Card>
+
+    </Grid>
+    </Router>
+
         <Grid item xs={6}>
-          <Button className={classes.paper}>Triage Tool</Button>
+              <Card className={classes.root}>
+                <CardActionArea>
+                    <CardMedia
+                     className={classes.media}
+                     image="/static/images/cards/contemplative-reptile.jpg"
+                      title="StartUp Tool"
+                     />
+                <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            StartUp Tool
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            Calculate the StartUp for your projects. 
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Learn More
+        </Button>
+      </CardActions>
+    </Card>
+    
         </Grid>
-        <Grid item xs={6}>
-          <Button className={classes.paper}>Start-Up Tool</Button>
-        </Grid>
+        
 
       </Grid>
     </div>
