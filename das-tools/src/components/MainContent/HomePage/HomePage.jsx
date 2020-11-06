@@ -12,9 +12,11 @@ import {
 	BrowserRouter as Router,
 	Route,
 	Switch,
-	Redirect
+	Redirect,
+  Link
 } from 'react-router-dom';
-import TriageFolder from "../TriageTool/TriageHeader/TriageHeader"
+import TriageFolder from "../TriageTool/TriageHeader/TriageHeader";
+import StartUpTool from "../StartUp/Pages/index"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -42,10 +44,8 @@ export default function CenteredGrid() {
         
         <Card className={classes.root}>
 
-        <Route exact path={['/TriageFolder']}>
-          
       <CardActionArea>
-        
+        <Link to='/TriageFolder' underline="none">
         <CardMedia
           className={classes.media}
           src="../"
@@ -59,10 +59,9 @@ export default function CenteredGrid() {
             Create project folder, estimate the design time and add triage notes. 
           </Typography>
         </CardContent>
-        <TriageFolder/> 
+        
+        </Link>
       </CardActionArea>
-
-      </Route>
 
       <CardActions>
         <Button size="small" color="primary">
@@ -71,12 +70,13 @@ export default function CenteredGrid() {
       </CardActions>
     </Card>
 
+
     </Grid>
-    </Router>
 
         <Grid item xs={6}>
               <Card className={classes.root}>
                 <CardActionArea>
+                  <Link to="/StartUpTool" underline="none">
                     <CardMedia
                      className={classes.media}
                      image="/static/images/cards/contemplative-reptile.jpg"
@@ -90,6 +90,7 @@ export default function CenteredGrid() {
             Calculate the StartUp for your projects. 
           </Typography>
         </CardContent>
+        </Link>
       </CardActionArea>
       <CardActions>
         <Button size="small" color="primary">
@@ -99,8 +100,17 @@ export default function CenteredGrid() {
     </Card>
     
         </Grid>
-        
 
+  <Switch>
+    <Route path="/TriageFolder"> 
+      <TriageFolder/>
+    </Route>
+     <Route path="/StartUpTool"> 
+      <StartUpTool/>
+    </Route>
+  </Switch>
+        
+</Router>
       </Grid>
     </div>
   );
