@@ -21,10 +21,13 @@ Design and Application Tool-Set for productivity, Efficiency and Quality
 
 ##  The home page has all the tools listed
 
+![Tool Home Page](https://github.com/rogercerpa/The-DAS-Team-ToolSet/blob/master/das-tools/src/assets/images/homePage.JPG)
 
 ## 1. Triage Tool
 
 ** Copy and paste the project information from agile
+
+![TriageTool](https://github.com/rogercerpa/The-DAS-Team-ToolSet/blob/master/das-tools/src/assets/images/TriageTool.JPG)
 
 - Copy info to the clipboard. 
 
